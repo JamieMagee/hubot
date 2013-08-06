@@ -13,4 +13,4 @@
 module.exports = (robot) ->
 
   robot.respond /hug me/i, (msg) ->
-    msg.send "/ME hugs #{msg.message.user.name}"
+    robot.adapter.action message.user "hugs #{msg.message.user.name}"
