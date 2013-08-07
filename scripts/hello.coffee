@@ -35,4 +35,6 @@ module.exports = (robot) ->
     "How art thou"
   ]
   robot.enter (msg) ->
-    msg.send "#{msg.random(greetings)} #{msg.message.user.name}"
+    user = msg.message.user.name.toLowerCase()
+    if user != 'hubot'
+      msg.send "#{msg.random(greetings)} #{msg.message.user.name}"
