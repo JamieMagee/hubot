@@ -6,6 +6,10 @@
 #   hubot echo <text> - Reply back with <text>
 #   hubot time - Reply with current time
 
+admins = [
+  "jamie"
+  ]
+
 module.exports = (robot) ->
   robot.respond /PING$/i, (msg) ->
     msg.send "PONG"
@@ -17,8 +21,12 @@ module.exports = (robot) ->
     msg.send "Server time is: #{new Date()}"
 
   robot.respond /DIE$/i, (msg) ->
-    msg.send "Goodbye, cruel world."
-    process.exit 0
+    user = msg.message.user.name.toLowerCase()
+    if user in admins
+      msg.send "Goodbye, cruel world."
+      process.exit 0
+    else
+      robot.reply "No"  
     
   robot.respond /please.*reboot.*/i, (msg) ->
     msg.reply "Why certainly, it would be my pleasure. Back in a jiffy, everyone!"
