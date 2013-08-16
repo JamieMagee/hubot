@@ -6,8 +6,23 @@
 #   hubot echo <text> - Reply back with <text>
 #   hubot time - Reply with current time
 
-admins = [
-  "jamie"
+bots = [
+  "bowser",
+  "clvr",
+  "curve",
+  "daisy",
+  "diddykong",
+  "drybones",
+  "guppy",
+  "hugbot",
+  "kingboo",
+  "matio",
+  "planes",
+  "route",
+  "swearbot",
+  "trains",
+  "wario",
+  "wolfram"  
   ]
 
 module.exports = (robot) ->
@@ -22,14 +37,17 @@ module.exports = (robot) ->
 
   robot.respond /DIE$/i, (msg) ->
     user = msg.message.user.name.toLowerCase()
-    if user in admins
+    if user not in bots
       msg.send "Goodbye, cruel world."
       process.exit 0
     else
-      robot.reply "No"  
+      msg.reply "No"  
     
   robot.respond /please.*reboot.*/i, (msg) ->
-    msg.reply "Why certainly, it would be my pleasure. Back in a jiffy, everyone!"
-    robot.shutdown()
-    process.exit 0
+    if user not in bots
+      msg.reply "Why certainly, it would be my pleasure. Back in a jiffy, everyone!"
+      robot.shutdown()
+      process.exit 0
+    else
+      msg.reply "No"
 
