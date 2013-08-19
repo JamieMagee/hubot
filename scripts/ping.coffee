@@ -25,8 +25,6 @@ bots = [
   "wolfram"  
   ]
   
-user = msg.message.user.name.toLowerCase()
-
 module.exports = (robot) ->
   robot.respond /PING$/i, (msg) ->
     msg.send "PONG"
@@ -38,6 +36,7 @@ module.exports = (robot) ->
     msg.send "Server time is: #{new Date()}"
 
   robot.respond /DIE$/i, (msg) ->
+    user = msg.message.user.name.toLowerCase()
     if user not in bots
       msg.send "Goodbye, cruel world."
       process.exit 0
@@ -45,6 +44,7 @@ module.exports = (robot) ->
       msg.reply "No"  
     
   robot.respond /please.*reboot.*/i, (msg) ->
+    user = msg.message.user.name.toLowerCase()
     if user not in bots
       msg.reply "Why certainly, it would be my pleasure. Back in a jiffy, everyone!"
       robot.shutdown()
