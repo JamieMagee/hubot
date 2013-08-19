@@ -24,6 +24,8 @@ bots = [
   "wario",
   "wolfram"  
   ]
+  
+user = msg.message.user.name.toLowerCase()
 
 module.exports = (robot) ->
   robot.respond /PING$/i, (msg) ->
@@ -36,7 +38,6 @@ module.exports = (robot) ->
     msg.send "Server time is: #{new Date()}"
 
   robot.respond /DIE$/i, (msg) ->
-    user = msg.message.user.name.toLowerCase()
     if user not in bots
       msg.send "Goodbye, cruel world."
       process.exit 0
