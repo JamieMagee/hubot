@@ -19,6 +19,7 @@ bots = [
   "matio",
   "planes",
   "route",
+  "rwge",
   "swearbot",
   "trains",
   "wario",
