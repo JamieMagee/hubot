@@ -1,3 +1,7 @@
+# Description:
+#   Tells channel users about hubot
+#
+
 module.exports = (robot) ->
   robot.respond /who are you\??/i, (msg) ->
     msg.send "https://github.com/JamieMagee/hubot"
