@@ -23,4 +23,4 @@ module.exports = (robot) ->
   robot.hear /\*hugs hubot\*/i, (msg) ->
     user = msg.message.user.name.toLowerCase()
     if user in ['hugbot']
-      msg.send '\o/'
+      msg.send '\\o/'
