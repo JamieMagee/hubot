@@ -11,7 +11,7 @@
 #   hubot hug me - Receive a hug
 
 module.exports = (robot) ->
-  robot.respond /^hug (.*)$/i, (msg) ->
+  robot.respond /hug (.*)$/i, (msg) ->
     user = msg.message.user.name.toLowerCase()
     if msg.match[1].toLowerCase() in ['me', 'myself']
       msg.send "*hugs #{user}*"
