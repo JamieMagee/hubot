@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Set environment variables
 . ./var.sh

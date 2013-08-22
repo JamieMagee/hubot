@@ -46,7 +46,7 @@ compliments = [
   'You\u2019ve never had morning breath. I swear.',
   'Your senior portrait was the best.',
   '8 out of 10 co-workers agree, your desk is the cleanest.',
-  'You\u2019td be the last one standing in a horror movie.',
+  'You\u2019d be the last one standing in a horror movie.',
   'You\u2019re a benevolent tipper.',
   'You\u2019re the best at making cereal.',
   'Your parents aren\u2019t worried about you.',
