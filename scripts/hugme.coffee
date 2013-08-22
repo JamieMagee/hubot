@@ -11,5 +11,5 @@
 #   hubot hug me - Receive a hug
 
 module.exports = (robot) ->
-  robot.respond /hug (.*)$/i, (msg) ->
+  robot.respond /^hug (.*)$/i, (msg) ->
     msg.send "*hugs #{msg.match[1]}*"
