@@ -8,10 +8,15 @@
 #   HUBOT_DEFAULT_STATION - set the default from station (nearest to your home/office)
 #
 # Commands:
-#   hubot trains <departure station> to <arrival station>
+#   hubot: trains <departure station> to <arrival station>
+#   hubot: trains <arrival station>
+#   hubot: trains <departure station> to  - lists next 5 departures
+#
+# Notes:
+#   Use the station code (https://en.wikipedia.org/wiki/UK_railway_stations)
 #
 # Author:
-#  Jamie Magee
+#  JamieMagee
 
 module.exports = (robot) ->
   robot.respond /trains (\w{3})( (to)*(.*))*/i, (msg) ->
