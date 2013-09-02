@@ -3,8 +3,8 @@
 #
 
 module.exports = (robot) ->
-  robot.respond /\\o/i, (msg) ->
+  robot.hear /\\o/i, (msg) ->
     msg.send "o/ high five!"
     
-  robot.respond /o\//i, (msg) ->
+  robot.hear /o\//i, (msg) ->
     msg.send "\\o high five!"  
