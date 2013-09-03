@@ -54,7 +54,7 @@ compliments = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /compliment (.*)/i, (msg) ->
+  robot.respond /compliment (.*)/i, (msg) ->
     name = msg.match[1].trim()
     rnd = Math.floor(Math.random()*compliments.length)
     msg.send "#{name}: #{compliments[rnd]}"
