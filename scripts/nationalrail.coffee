@@ -27,7 +27,7 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         stuff = JSON.parse(body)
         if stuff.trains.length
-          msg.reply "Next trains from: #{trainFrom} to #{trainTo}"
+          msg.reply "Next trains from #{trainFrom} to #{trainTo}:"
           for key, value of stuff.trains       
             if key < 5              
               info = "#{value}".split ","

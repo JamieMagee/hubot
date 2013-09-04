@@ -31,7 +31,7 @@ bots = [
 module.exports = (robot) ->
   robot.respond /go away/i, (msg) ->
     user = msg.message.user.name.toLowerCase()
-    if user not in botss
+    if user not in bots
       room = msg.message.user.room
       msg.reply "OK. I'll come back in a minute."
       setTimeout (->
