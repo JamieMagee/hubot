@@ -38,3 +38,6 @@ module.exports = (robot) ->
         else
           msg.reply "I couldn't find trains from: #{trainFrom} to #{trainTo}"
           msg.send "Please check the station codes https://en.wikipedia.org/wiki/UK_railway_stations"
+
+  robot.respond /station (\w{3})/i, (msg) ->
+    msg.reply "http://www.nationalrail.co.uk/stations/#{msg.match[1].trim().toUpperCase()}/details.html"

@@ -28,7 +28,6 @@ do
         break
     fi
     git pull origin master
-    npm install
 	echo "Starting hubot"
 	./bin/hubot -a irc
 	echo -n "hubot stopped. Waiting 20s before restart. PID is "
