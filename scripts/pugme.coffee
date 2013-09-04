@@ -16,6 +16,13 @@ module.exports = (robot) ->
     msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
         msg.send JSON.parse(body).pug
+        
+  robot.respond /pug bomb( (\d+))?/i, (msg) ->
+    count = msg.match[2] || 5
+    msg.http("http://pugme.herokuapp.com/bomb?count=" + count)
+      .get() (err, res, body) ->
+        user = msg.message.user.name
+        robot.adapter.command 'PRIVMSG', user, pug for pug in JSON.parse(body).pugs
 
   robot.respond /how many pugs are there/i, (msg) ->
     msg.http("http://pugme.herokuapp.com/count")
