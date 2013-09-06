@@ -33,7 +33,8 @@
     "underscore": ">=1.5.1",
     "underscore.string": ">=2.3.0",
     "ntwitter": ">=0.2.10",
-    "flip": "~0.1.0"
+    "flip": "~0.1.0",
+    "async": ">= 0.2.9"
   },
 
   "engines": {

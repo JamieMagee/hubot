@@ -12,10 +12,16 @@
 
 module.exports = (robot) ->
 
-  robot.respond /pug me/i, (msg) ->
+  robot.respond /pug (.*)/i, (msg) ->
     msg.http("http://pugme.herokuapp.com/random")
       .get() (err, res, body) ->
-        msg.send JSON.parse(body).pug
+        user = msg.message.user.name.toLowerCase()
+        if msg.match[1].toLowerCase() in ['me', 'myself']
+          msg.send user + ": " + JSON.parse(body).pug
+        else if msg.match[1].toLowerCase() in ['you', 'yourself']
+          msg.send "hubot:" + JSON.parse(body).pug
+        else
+          msg.send "#{msg.match[1]}: " + JSON.parse(body).pug
         
   robot.respond /pug bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || 5
