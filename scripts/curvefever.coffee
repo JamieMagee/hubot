@@ -12,15 +12,15 @@
 
 players = [
   'jammie',
-  'Ealbrigt',
+  'ealbrigt',
   'tjw',
-  'Aatukora',
-  'Irp',
-  'Jose-panda',
-  'Andyj',
+  'aatukora',
+  'irp',
+  'jose-panda',
+  'andyj',
   'obone',
   'usmate',
-  'Lutomlin',
+  'lutomlin',
   'jobrandh'  
   ]
 
@@ -32,15 +32,13 @@ module.exports = (robot) ->
     results = []
     fns = players.map (player) ->
       (cb) ->
-        msg.http("http://pwa.wp3.pl/curvefever/?player=" + player).get() (err, res, body) ->
-#          if (err) return cb(err);
+        msg.http("http://curvefever.com/users/" + player).get() (err, res, body) ->
           $ = cheerio.load(body)
           results.push
-            name: $("b").slice(0).eq(0).text().toLowerCase()
-            rank: parseInt($("td").slice(37).eq(0).text(), 10)
+            name: $("h1").slice(0).eq(0).text()
+            rank: parseInt($("dd").slice(1).eq(0).text(), 10)
           cb()
     async.parallel fns, ->
-#    if (err) msg.send(err);
       results.sort (x,y) -> y.rank - x.rank
       for player in results
         msg.send player.name + " " + player.rank
