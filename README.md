@@ -1,5 +1,7 @@
 # Hubot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamieMagee/hubot.svg)](https://greenkeeper.io/)
+
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
 
 # Updating Hubot
